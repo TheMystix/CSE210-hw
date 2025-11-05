@@ -9,43 +9,67 @@ class Program
         string userInput = Console.ReadLine();
         int grade = int.Parse(userInput);
 
+        string letter = "";
 
-
-        if (grade >= 97)
-            Console.WriteLine(" Your grade is A ");
-
+        if (grade >= 93)
+        {
+            letter = "A";
+        }
         else if (grade >= 90)
-            Console.WriteLine(" Your grade is A- ");
-
+        {
+            letter = "A-";
+        }
         else if (grade >= 87)
-            Console.WriteLine(" Your grade is B+ ");
-
-        else if (grade >= 84)
-            Console.WriteLine(" Your grade is B ");
-
+        {
+            letter = "B+";
+        }
+        else if (grade >= 83)
+        {
+            letter = "B";
+        }
         else if (grade >= 80)
-            Console.WriteLine(" Your grade is B- ");
-
+        {
+            letter = "B-";
+        }
         else if (grade >= 77)
-            Console.WriteLine(" Your grade is C+ ");
-
-        else if (grade >= 74)
-            Console.WriteLine(" Your grade is C ");
-
+        {
+            letter = "C+";
+        }
+        else if (grade >= 73)
+        {
+            letter = "C";
+        }
         else if (grade >= 70)
-            Console.WriteLine(" Your grade is C- ");
-
+        {
+            letter = "C-";
+        }
         else if (grade >= 67)
-            Console.WriteLine(" Your grade is D+ ");
-
-        else if (grade >= 64)
-            Console.WriteLine(" Your grade is D ");
-
+        {
+            letter = "D+";
+        }
+        else if (grade >= 63)
+        {
+            letter = "D";
+        }
         else if (grade >= 60)
-            Console.WriteLine(" Your grade is D- ");
-
+        {
+            letter = "D-";
+        }
         else
-            Console.WriteLine(" Your grade is F");
+        {
+            letter = "F";
+        }
+
+        Console.WriteLine($"Your grade is: {letter}");
+        
+        if (grade >= 70)
+        {
+            Console.WriteLine($"Great job!");
+        }
+        else
+        {
+            Console.WriteLine($"Better luck next time!");
+        }
 
         
     }
