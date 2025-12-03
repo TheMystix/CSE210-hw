@@ -1,5 +1,7 @@
 using System.IO;
 
+#nullable enable
+
 public class FileJournalStorage : JournalStorage
 {
     public override void Save(string filename, List<JournalEntry> entries)
@@ -27,8 +29,14 @@ public class FileJournalStorage : JournalStorage
             {
                 if (line == "-----")
                 {
-                    string date = reader.ReadLine();
-                    string text = reader.ReadLine();
+                    string? date = reader.ReadLine();
+                    if (date == null)
+                        break;
+
+                    string? text = reader.ReadLine();
+                    if (text == null)
+                        text = string.Empty;
+
                     entries.Add(new JournalEntry(text) { Date = date });
                 }
             }
